@@ -1,0 +1,14 @@
+.sports-tree {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+.disciplines {
+  > li {
+    background-color: #ccc;
+    height: 30px;
+    line-height: 30px;
+  }
+}

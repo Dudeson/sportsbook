@@ -1,0 +1,14 @@
+<ul class="disciplines" uib-accordion close-others="oneAtATime">
+  <li uib-accordion-group class="panel-default" heading="{{item.name}}({{item.total}})" ng-repeat="item in tree" >
+
+    <ul class="countries" uib-accordion close-others="oneAtATime">
+      <li uib-accordion-group class="panel-default" heading="{{country.name}}({{country.total}})" ng-repeat="country in item.countries" >
+        <ul class="leagues">
+          <li ng-repeat="league in country.leagues" ng-click="showGrid(league.id)">
+            {{league.id}} - {{league.name}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>

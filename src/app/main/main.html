@@ -1,10 +1,24 @@
 <div class="container">
 
   <div>
-    <!-- <acme-navbar creation-date="main.creationDate"></acme-navbar> -->
     <tree class="sports-tree"></tree>
   </div>
 
+  <div ng-show="gridBuilded">
+    <h3>Grid will be here</h3>
+    <table border="1">
+      <tr>
+        <td><h4>Date</h4></td>
+        <td><h4>Pair</h4></td>
+        <td ng-repeat="oddtype in types | orderBy : 'priority' ">
+            <h4><small>({{oddtype.priority}})</small>{{oddtype.name}} odds:</h4>
+            <strong ng-repeat="odd in oddtype.odds | orderBy : 'priority' "><small>({{odd.priority}})</small>{{odd.name}}</strong>
+        </td>
+      </tr>
+      
+    </table>
+  </div>
+  
   <div class="jumbotron text-center">
     <h1>'Allo, 'Allo!</h1>
     <p class="lead">
@@ -19,17 +33,5 @@
     </p>
   </div>
 
-  <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </div>

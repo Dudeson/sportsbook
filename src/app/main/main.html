@@ -10,9 +10,9 @@
       <tr>
         <th><h4>Date</h4></th>
         <th><h4>Pair</h4></th>
-        <th ng-repeat="oddtype in types | orderBy : 'priority' ">
-            <h4><small>({{oddtype.priority}})</small>{{oddtype.name}} odds:</h4>
-            <strong ng-repeat="odd in oddtype.odds | orderBy : 'priority' "><small>({{odd.priority}})</small>{{odd.name}}</strong>
+        <th ng-repeat="odd in sortedHead">
+            <!-- <h4><small>({{oddtype.priority}})</small>{{oddtype.name}} odds:</h4> -->
+            <strong><small>({{odd.priority}})</small>{{odd.name}}</strong>
         </th>
       </tr>
 

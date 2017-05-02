@@ -1,17 +1,14 @@
-.acme-navbar-text{
-  color: white;
+.sports-tree {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
-
-a {
-  color: black;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0;
-  line-height: 1.25em;
-}
-
-a:hover, a:focus {
-  color: greenyellow;
+.disciplines {
+  > li {
+    background-color: #ccc;
+    height: 30px;
+    line-height: 30px;
+  }
 }

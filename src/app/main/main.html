@@ -19,8 +19,8 @@
       <tr ng-repeat="match in matches">
         <td>{{match.sd}}</td>
         <td>{{match.h}} - {{match.a}}</td>
-        <td ng-repeat="oddGroup in match.sortedOdds">
-          <span ng-repeat="odd in oddGroup | orderBy : 'priority' ">-{{odd.value}}-</span>
+        <td ng-repeat="(key, odd) in match.sortedOdds">
+          -{{odd.value}}-
         </td>
       </tr>
       

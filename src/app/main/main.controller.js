@@ -20,34 +20,28 @@
 				$scope.gridBuilded = true;
 				var resultArray = {};
 				var iterations = 0;
+				
+
 				angular.forEach($scope.matches, function(match, key){
 					resultArray[match.id] = match;
-					angular.forEach(match.odds, function(oddtype, typekey){
-						angular.forEach($scope.types, function(type, key){
-							iterations++;
-							resultArray[match.id].sortedOdds = resultArray[match.id].sortedOdds || {}
-							resultArray[match.id].sortedOdds[type.priority] = resultArray[match.id].sortedOdds[type.priority] || {};
-							if (typekey == type.index) {
-								resultArray[match.id].sortedOdds[type.priority] = oddtype;
-							}
-						})
-					})
-				})
-
-				
-				angular.forEach(resultArray, function(match, key){
-					angular.forEach(match.sortedOdds, function(sortedType, key){
-						angular.forEach(sortedType, function(item, key){
-							angular.forEach($scope.types, function(type, key){
-								angular.forEach(type.odds, function(odd, key){
-									iterations++
-									if (item.name == odd.id) {
-										item.priority = odd.priority;
-									}
-								})
+					resultArray[match.id].sortedOdds = resultArray[match.id].sortedOdds || {};
+					angular.forEach($scope.types, function(type, key){
+						
+						angular.forEach(type.odds, function(odd, key){
+							var priority = type.priority.toString() + odd.priority.toString(); 
+							resultArray[match.id].sortedOdds[priority] = []; 
+							angular.forEach(match.odds[type.index], function(item, key){
+								if (item.name == odd.id ){
+									iterations++;
+									resultArray[match.id].sortedOdds[priority] = item; 
+								}else {
+									iterations++;
+								}
 							})
 						})
+						
 					})
+
 				})
 
 				$scope.matches = resultArray;

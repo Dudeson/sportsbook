@@ -1,0 +1,26 @@
+.grid {
+  transition: all linear 0.5s;
+  &.ng-hide {
+    opacity: 0;
+  }
+  table {
+    margin:0;
+    padding:0;
+    background:none;
+    border-collapse:collapse;
+    border-spacing:0;
+    background-image:none;
+    table-layout: fixed;
+    tr:nth-child(2n) {
+      td {background-color: #F0F0F0;}
+    }
+    td,th {
+      padding: 5px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .pair {
+      text-align: left;
+    }
+  }
+}

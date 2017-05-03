@@ -4,11 +4,63 @@
     margin: 0;
     padding: 0;
   }
+  ul.disciplines {
+    padding: 10px 0;
+  }
+  .leagues {
+    padding-left: 10px;
+    li {
+      color: #fff;
+      padding: 5px 0;
+    }
+  }
+  .total {
+    float: right;
+    padding-right: 5%;
+  }
 }
+
 .disciplines {
+  background-color: #263238;
   > li {
     background-color: #ccc;
     height: 30px;
     line-height: 30px;
   }
+  .panel-group {
+    margin-bottom: 0;
+  }
+  .panel-group .panel-default {
+    box-shadow: none;
+    margin-top: 0;
+    border-radius: 0;
+    border: none; 
+    background: none;
+    .panel-body {
+      border-top: none;
+    }
+    >.panel-collapse{
+      background-color: #2F3D45;
+      .panel-collapse {
+        background-color: #364650;
+      }
+    }
+  }
+  .panel-heading {
+    padding: 0;
+    background: none;
+  }
+  .accordion-toggle {
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3s linear;
+    text-decoration: none;
+    &:hover {
+      color: #498AEA;
+    }
+    display: block;
+    padding: 10px 15px;
+    outline: none;
+  }
+  
 }

@@ -1,45 +1,39 @@
-<div class="container">
+<div class="container-fluid">
 
-  <div>
-    <tree class="sports-tree"></tree>
+  <div class="col-md-4">
+    <h2>Select League</h2>
+    <tree></tree>  
   </div>
+  <div class="col-md-8">
+    <h2>Matches</h2>
+    <div class="grid" ng-show="gridBuilded">
+      <table border="1">
+        <tr>
+          <th rowspan="2">Date</th>
+          <th rowspan="2" class="pair">Pair</th>
+          <th ng-repeat="odd in types | orderBy: 'priority' " colspan="{{odd.odds.length}}">
+              <small>{{odd.name}}</small>
+          </th>
+        </tr>
+        <tr>
+          <th ng-repeat="item in sortedHead">{{item.name}}</th>
+        </tr>
 
-  <div ng-show="gridBuilded">
-    <h3>Grid will be here</h3>
-    <table border="1">
-      <tr>
-        <th><h4>Date</h4></th>
-        <th><h4>Pair</h4></th>
-        <th ng-repeat="odd in sortedHead">
-            <!-- <h4><small>({{oddtype.priority}})</small>{{oddtype.name}} odds:</h4> -->
-            <strong><small>({{odd.priority}})</small>{{odd.name}}</strong>
-        </th>
-      </tr>
-
-      <tr ng-repeat="match in matches">
-        <td>{{match.sd}}</td>
-        <td>{{match.h}} - {{match.a}}</td>
-        <td ng-repeat="(key, odd) in match.sortedOdds">
-          -{{odd.value}}-
-        </td>
-      </tr>
-      
-    </table>
+        <tr ng-repeat="match in matches">
+          <td>{{match.sd | date :  "MM-dd HH:mm" }}</td>
+          <td class="pair">{{match.h}} - {{match.a}}</td>
+          <td ng-repeat="(key, odd) in match.sortedOdds">
+            {{odd.value}}
+          </td>
+        </tr>
+        
+      </table>
+    </div>
   </div>
   
-  <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p class="animated infinite" ng-class="main.classAnimation">
-      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
-    </p>
-    <p>
-      With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-    </p>
-  </div>
+
+  
+  
 
 
 </div>

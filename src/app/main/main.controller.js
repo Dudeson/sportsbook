@@ -14,13 +14,11 @@
 
 
 		$scope.showGrid = function(id){
-			backendData.getMatches(0).then(function(response){
+			backendData.getMatches(id).then(function(response){
 				$scope.matches = response.data;	
 				$scope.types = $rootScope.oddsLayout;
-				$scope.gridBuilded = true;
 				var resultArray = {};
 				var sortedHead = {};
-				var iterations = 0;
 				
 
 				angular.forEach($scope.matches, function(match, key){
@@ -42,9 +40,9 @@
 					})
 				})
 
-				console.log(sortedHead);
 				$scope.sortedHead = sortedHead;
 				$scope.matches = resultArray;
+				$scope.gridBuilded = true;
 				
 			});
 		}

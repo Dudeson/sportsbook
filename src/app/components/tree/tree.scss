@@ -9,9 +9,18 @@
   }
   .leagues {
     padding-left: 10px;
-    li {
+    .league {
       color: #fff;
-      padding: 5px 0;
+      padding: 5px 10px;
+      transition: all 0.3s linear;
+      &:hover {
+        color: #498AEA;
+        cursor: pointer;
+      }
+      &.active {
+        color: #498AEA;
+        background-color: lighten(#364650,5);
+      }
     }
   }
   .total {

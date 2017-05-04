@@ -1,16 +1,16 @@
 <div class="sports-tree">
-  <ul class="disciplines" uib-accordion close-others="oneAtATime">
-    <li uib-accordion-group class="panel-default"  ng-repeat="item in tree" >
+  <ul class="disciplines" uib-accordion close-others="true">
+    <li uib-accordion-group class="panel-default"  ng-repeat="item in tree | orderBy: '-priority' " >
       <uib-accordion-heading>
         {{item.name}}<span class="total">{{item.total}}</span>
       </uib-accordion-heading>
       <ul class="countries" uib-accordion close-others="oneAtATime">
-        <li uib-accordion-group class="panel-default" ng-repeat="country in item.countries" >
+        <li uib-accordion-group class="panel-default" ng-repeat="country in item.countries | orderBy: 'name' " >
           <uib-accordion-heading>
             {{country.name}}<span class="total">{{country.total}}</span>
           </uib-accordion-heading>
           <ul class="leagues">
-            <li ng-repeat="league in country.leagues" ng-click="showGrid(league.id)">
+            <li class="league" ng-repeat="league in country.leagues | orderBy: 'name' " data-league="{{league.id}}">
               {{league.name}}<span class="total">{{league.total}}</span>
             </li>
           </ul>

@@ -6,17 +6,17 @@
 		.controller('MainController', MainController);
 
 	/** @ngInject */
-	function MainController($timeout, $scope, $rootScope, $filter, backendData) {
+	function MainController($scope, backendData) {
 		var vm = this;
 		$scope.gridBuilded = false;
+		$scope.types = backendData.layotData;
 
-		
 
 
 		$scope.showGrid = function(id){
+			console.log("some");
 			backendData.getMatches(id).then(function(response){
 				$scope.matches = response.data;	
-				$scope.types = $rootScope.oddsLayout;
 				var resultArray = {};
 				var sortedHead = {};
 				

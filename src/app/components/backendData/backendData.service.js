@@ -7,6 +7,9 @@
 
   /** @ngInject */
   function backendData($http) {
+
+    this.treeData = {};
+    this.layoutData = {};
     
     // getting tree structure 
     function getTree() {

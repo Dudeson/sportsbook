@@ -1,39 +1,35 @@
 <div class="container-fluid">
 
-  <div class="col-md-4">
-    <h2>Select League</h2>
-    <tree load-grid="showGrid(id)"></tree>  
-  </div>
-  <div class="col-md-8">
-    <h2>Matches</h2>
-    <div class="grid" ng-show="gridBuilded">
-      <table border="1">
-        <tr>
-          <th rowspan="2">Date</th>
-          <th rowspan="2" class="pair">Pair</th>
-          <th ng-repeat="odd in types | orderBy: 'priority' " colspan="{{odd.odds.length}}">
-              <small>{{odd.name}}</small>
-          </th>
-        </tr>
-        <tr>
-          <th ng-repeat="item in sortedHead">{{item.name}}</th>
-        </tr>
+	<div class="col-md-4">
+		<h2>Select League</h2>
+		<tree load-grid="showGrid(id)"></tree>  
+	</div>
+	
+	<div class="col-md-8">
+		<h2>Matches</h2>
+		<div class="grid" ng-show="gridBuilded">
+			<table border="1">
+				<tr>
+					<th rowspan="2">Date</th>
+					<th rowspan="2" class="pair">Pair</th>
+					<th ng-repeat="odd in types | orderBy: 'priority' " colspan="{{odd.odds.length}}">
+						<small>{{odd.name}}</small>
+					</th>
+				</tr>
+				<tr>
+					<th ng-repeat="item in sortedHead">{{item.name}}</th>
+				</tr>
 
-        <tr ng-repeat="match in matches">
-          <td>{{match.sd | date :  "MM-dd HH:mm" }}</td>
-          <td class="pair">{{match.h}} - {{match.a}}</td>
-          <td ng-repeat="(key, odd) in match.sortedOdds">
-            {{odd.value}}
-          </td>
-        </tr>
-        
-      </table>
-    </div>
-  </div>
-  
-
-  
-  
-
+				<tr ng-repeat="match in matches">
+					<td>{{match.sd | date :  "MM-dd HH:mm" }}</td>
+					<td class="pair">{{match.h}} - {{match.a}}</td>
+					<td ng-repeat="(key, odd) in match.sortedOdds">
+						{{odd.value}}
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+	</div>
 
 </div>

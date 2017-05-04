@@ -8,6 +8,7 @@
   /** @ngInject */
   function backendData($http) {
 
+    // objects to store fetched data
     this.treeData = {};
     this.layoutData = {};
     

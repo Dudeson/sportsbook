@@ -1,5 +1,5 @@
 <div class="sports-tree">
-  <ul class="disciplines" uib-accordion close-others="true">
+  <ul class="disciplines" uib-accordion close-others="oneAtATime">
     <li uib-accordion-group class="panel-default"  ng-repeat="item in tree | orderBy: '-priority' " >
       <uib-accordion-heading>
         {{item.name}}<span class="total">{{item.total}}</span>

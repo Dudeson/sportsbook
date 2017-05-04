@@ -16,7 +16,7 @@ npm install
 install bower packages
 
 ```
-npm install
+bower install
 ```
 
 and then start gulp server
